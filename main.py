@@ -1,12 +1,14 @@
 __author__ = 'GD020348'
 import random
 
+
 def main():
     thefile = "input.txt"
     # thefile = input("What's the name of the file?")
     inputfile = open(thefile)
     lines = inputfile.readlines()
     word = ""
+    output = []
 
     # First, grab out individual lines in the input file
     for line in lines:
@@ -30,9 +32,11 @@ def main():
                     final = final + x
                 #print(middle)
                 #print(word[0] + word[1:-1].shuffle())
-                print(word[0]+final+word[-1])
+                #print(word[0]+final+word[-1])
+                output += word[0]+final+word[-1]
                 word = ""
-        # print(characters)
+        #print(final)
+    print(output)
     inputfile.close()
 
 main()
